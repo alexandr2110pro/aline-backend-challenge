@@ -46,7 +46,7 @@ Opening the app in another browser should allow to login as another user.
 
 Create a fork, implement and create a pull request on the github.
 
-Append a gif files for each use case:
+Append a gif file for each use case:
  - login 2 users from 2 browsers & reload both browsers & show the log panel
  - post some messages & show the log panel
  - like/dislike some messages & show the log panel

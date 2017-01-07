@@ -1,6 +1,6 @@
 # Aline Backend Challenge
 
-Implement the simple public chat application (with a single thread for all messages from all users) 
+Implement the simple public chat realtime application (with a single thread for all messages from all users) 
 and a log panel that shows logs of all actions in the system.
 
  

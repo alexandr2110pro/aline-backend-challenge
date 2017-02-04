@@ -50,3 +50,14 @@ Append a gif file for each use case:
  - login 2 users from 2 browsers & reload both browsers & show the log panel
  - post some messages & show the log panel
  - like/dislike some messages & show the log panel
+
+## Tests: 
+
+Start Redis server locally before starting the tests!
+
+![Test 1]( http://i.imgur.com/HNprkkh.gif "Test 1")
+
+![Test 2]( http://i.imgur.com/GwYn9Br.gif "Test 2")
+
+![Test 3]( http://i.imgur.com/703reLX.gif "Test 3")
+

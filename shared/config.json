@@ -1,5 +1,7 @@
 {
     "jwtSecret": "jwt-sercert-key!",
     "redisServer": "127.0.0.1",
-    "redisPort": 6379
+    "redisPort": 6379,
+    "redisChannel": "chat",
+    "logsHash": "log"
 }

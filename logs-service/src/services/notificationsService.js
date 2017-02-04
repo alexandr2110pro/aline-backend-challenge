@@ -23,6 +23,6 @@ export class NotificationsService {
             logsSocket.create(logItem);
         });
 
-        this.client.subscribe('chat');
+        this.client.subscribe(config.redisChannel);
     }
 }

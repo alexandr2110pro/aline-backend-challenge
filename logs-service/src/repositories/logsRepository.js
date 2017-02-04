@@ -13,12 +13,12 @@ export class LogsRepository {
     }
 
     getAll(next) {
-        this.client.hgetall('log', next);
+        this.client.hgetall(config.logsHash, next);
     }
 
     store(logItem) {
         try {
-            return (this.client.hset('log', logItem.id, JSON.stringify(logItem), redis.print));
+            return (this.client.hset(config.logsHash, logItem.id, JSON.stringify(logItem), redis.print));
         } catch (ex) {
             console.log(ex);
             return false;

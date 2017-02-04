@@ -1,4 +1,4 @@
-import { LogsRepository } from '../repositories/logsRepository.js';
+import { LogsRepository } from '../repositories/logsRepository';
 
 export class LogsService {
 

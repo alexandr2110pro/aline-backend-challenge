@@ -3,11 +3,11 @@ import { LogsService } from '../services/logsService';
 
 export class LogsSocketController extends SocketController {
 
-    static init(server, ns) {
-        return new LogsSocketController(server, ns);
+    static init(server) {
+        return new LogsSocketController(server);
     }
 
-    constructor(server, ns) {
+    constructor(server) {
         super(server, '/logs');
         this.socket = null;
 

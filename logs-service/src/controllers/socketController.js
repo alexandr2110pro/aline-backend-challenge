@@ -1,5 +1,4 @@
 import config from '../../../shared/config.json';
-// import { LogsService } from '../services/logsService';
 
 import socketIo from 'socket.io';
 import socketioJwt from 'socketio-jwt';
@@ -24,11 +23,5 @@ export class SocketController {
         }));
 
         this.nsp = io.of(namespace);
-        // this.logsService = new LogsService();
-
-    }
-
-    logEvent(eventName, eventObject) {
-        this.logsService.publish(eventName, eventObject);
     }
 }

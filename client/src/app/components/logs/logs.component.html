@@ -1,0 +1,10 @@
+<div>
+    <a class="button" id="chat" routerLink="chat"> Chat </a> |
+    <a class="button" id="logout" routerLink="login"> Logout {{user.username}}</a>
+</div>
+
+<ul id="chat-messages">
+    <li *ngFor="let logItem of logItems" id={{logItem.id}}>
+        <span>{{logItem.messageText}}</span>
+    </li>
+</ul>

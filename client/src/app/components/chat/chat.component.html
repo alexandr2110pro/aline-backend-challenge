@@ -1,0 +1,25 @@
+<div>
+    <a class="button" id="logs" routerLink="/logs"> Logs </a> |
+    <a class="button" id="logout" routerLink="/login"> Logout {{user.username}}</a>
+</div>
+
+<ul id="chat-messages">
+    <li *ngFor="let message of messages" [ngClass]="{mine: message.username === user.username}" id={{message.id}}>
+        <span>
+            <input type="checkbox" [(ngModel)]="message.liked" (change)="like(message)" />
+        </span>
+        <small>{{message.dateCreated | date:'medium'}}</small>
+        <strong>{{message.username}}: </strong>
+        <span>{{message.messageText}}</span>
+
+    </li>
+</ul>
+
+<div>
+    <form name="form" (ngSubmit)="submitMessage($event)" #f="ngForm">
+        <div class="form-group">
+            <label for="message">Message</label>
+            <input type="text" class="form-control" [(ngModel)]="message.messageText" name="message" required />
+        </div>
+    </form>
+</div>

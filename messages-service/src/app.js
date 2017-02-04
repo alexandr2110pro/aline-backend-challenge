@@ -4,7 +4,7 @@ import cors from 'cors';
 
 import * as localConfig from './config.json';
 
-import { MessagesSocketController } from './controllers/messagesSocketController.js';
+import { MessagesSocketController } from './controllers/messagesSocketController';
 
 export class ServerApp {
 

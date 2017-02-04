@@ -14,7 +14,7 @@ export class MessagesRepository {
 
     store(message) {
         try {
-            return (this.client.hset('message', message.id, JSON.stringify(message), redis.print));
+            return (this.client.hset(config.messagesHash, message.id, JSON.stringify(message), redis.print));
         } catch (ex) {
             console.log(ex);
             return false;
@@ -22,16 +22,16 @@ export class MessagesRepository {
     }
 
     get(id, next) {
-        this.client.hget('message', id, next);
+        this.client.hget(config.messagesHash, id, next);
     }
 
     getAll(next) {
-        this.client.hgetall('message', next);
+        this.client.hgetall(config.messagesHash, next);
     }
 
     update(message) {
         try {
-            return (this.client.hset('message', message.id, JSON.stringify(message), redis.print));
+            return (this.client.hset(config.messagesHash, message.id, JSON.stringify(message), redis.print));
         } catch (ex) {
             console.log(ex);
             return false;

@@ -27,8 +27,4 @@ export class SocketController {
         this.logsService = new LogsService();
 
     }
-
-    logEvent(eventName, eventObject) {
-        this.logsService.publish(eventName, eventObject);
-    }
 }

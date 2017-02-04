@@ -1,4 +1,4 @@
-import { MessagesRepository } from '../repositories/messagesRepository.js';
+import { MessagesRepository } from '../repositories/messagesRepository';
 import { LogsService } from '../services/logsService';
 
 export class MessagesService {
@@ -9,7 +9,7 @@ export class MessagesService {
         let logsService = new LogsService();
         const logTime = new Date();
         let logMessage = `user ${message.username} has created a message ${logTime}`;
-        logsService.publish('chat-message', logMessage);
+        logsService.publish(logMessage);
         return message;
     }
 
@@ -42,16 +42,13 @@ export class MessagesService {
             repo.store(item);
 
             const logTime = new Date();
-            let logMessage = '';
+            logMessage = '';
 
-            if (item.liked) {
-                logMessage = `user ${message.likedBy} has liked the message of user ${message.username} ${logTime}`;
-            } else {
-                logMessage = `user ${message.likedBy} has disliked the message of user ${message.username} ${logTime}`;
-            }
+            let event = item.liked ? 'liked' : 'disliked';
+            let logMessage = `user ${message.likedBy} has ${event} the message of user ${message.username} ${logTime}`;
 
             let logsService = new LogsService();
-            logsService.publish('chat-message', logMessage);
+            logsService.publish(logMessage);
             next(null, item);
         });
     }

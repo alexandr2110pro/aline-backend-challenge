@@ -14,7 +14,7 @@ export class MessagesSocketController extends SocketController {
         this.nsp.on('connection', socket => {
             socket.username = this.username;
             this.socket = socket;
-            console.log(`IO Client connected ${this.username} (${socket.username}) ${socket.conn.id}`);
+            console.log(`IO Client connected ${socket.username} ${socket.conn.id}`);
             socket.on('disconnect', () => console.log('socket disconnect'));
             socket.on('create', this.create);
             socket.on('like', this.like);
@@ -36,7 +36,6 @@ export class MessagesSocketController extends SocketController {
             }
             this.nsp.emit('like', data);
         });
-        console.log(`like message ${message.id} -> ${this.username}`);
     }
 
     list() {

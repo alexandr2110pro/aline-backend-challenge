@@ -14,7 +14,7 @@ export class LogsSocketController extends SocketController {
         this.nsp.on('connection', socket => {
             socket.username = this.username;
             this.socket = socket;
-            console.log(`IO Client connected ${this.username} (${socket.username}) ${socket.conn.id}`);
+            console.log(`IO Client connected ${socket.username} ${socket.conn.id}`);
             socket.on('disconnect', () => console.log('socket disconnect'));
             socket.on('list', this.list);
         });

@@ -12,7 +12,7 @@ export class LogsService {
         });
     }
 
-    publish(eventName, eventText) {
-        this.client.publish('chat', eventText);
+    publish(eventText) {
+        this.client.publish(config.redisChannel, eventText);
     }
 }
